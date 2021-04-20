@@ -1,0 +1,17 @@
+version: '2'
+services:
+    rabbitmq:
+       hostname: rabbitmq
+       environment:
+         RABBITMQ_DEFAULT_USER: ${USER}
+         RABBITMQ_DEFAULT_PASS: ${PASS}
+       image: "rabbitmq:management"
+       restart: always
+       volumes:
+         - "./data:/var/lib/rabbitmq"
+         - "./log:/var/log/rabbitmq/log"
+       ports:
+         - "15672:15672"
+         - "4369:4369"
+         - "5672:5672"
+         - "25672:25672"
