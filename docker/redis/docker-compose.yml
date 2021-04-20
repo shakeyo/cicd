@@ -10,5 +10,5 @@ services:
         - ./conf/redis.conf:/etc/redis/redis.conf:rw
         - ./data:/data:rw
       command:
-        redis-server /etc/redis/redis.conf --requirepass $(PASSWORD) --appendonly yes
+        redis-server /etc/redis/redis.conf --requirepass ${PASSWORD} --appendonly yes
   
