@@ -5,10 +5,10 @@ services:
       hostname: redis
       restart: always
       ports:
-        - ${PORT}:6379
+        - ${REDIS_PORT}:6379
       volumes:
         - ./conf/redis.conf:/etc/redis/redis.conf:rw
         - ./data:/data:rw
       command:
-        redis-server /etc/redis/redis.conf --requirepass ${PASSWORD} --appendonly yes
+        redis-server /etc/redis/redis.conf --requirepass ${REDIS_PASSWORD} --appendonly yes
   
